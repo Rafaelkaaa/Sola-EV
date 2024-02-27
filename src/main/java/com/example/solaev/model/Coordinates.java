@@ -4,8 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,11 +27,7 @@ public class Coordinates {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     private UUID id;
-    @Min(-90)
-    @Max(90)
     private double latitude;
-    @Min(-180)
-    @Max(180)
     private double longitude;
     @OneToOne(mappedBy = "coordinates")
     private ChargingStation chargingStation;

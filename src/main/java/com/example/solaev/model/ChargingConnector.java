@@ -26,12 +26,10 @@ public class ChargingConnector {
     )
     private UUID id;
     @Enumerated(EnumType.STRING)
-    @NotEmpty
+    @NotNull
     private ChargingConnectorType type;
-    @Min(value = 1)
     @Min(value = 3, message = "Maximum power of the charging connector must exceed 3 kW")
-    @Max(value = 500, message = "Maximum power of the charging connector should not exceed 500 kW")
-    @NotEmpty
+    @Max(value = 500, message = "Maximum power of the charging connector mustn't be bigger than 500 kW")
     private int maxKw;
     @ManyToMany(mappedBy = "chargingConnectors")
     private Set<ChargingStation> chargingStation;

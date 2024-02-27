@@ -9,5 +9,4 @@ public class SolaEvApplication {
     public static void main(String[] args) {
         SpringApplication.run(SolaEvApplication.class, args);
     }
-
 }

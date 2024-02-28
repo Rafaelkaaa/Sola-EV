@@ -11,13 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChargingConnectorDto {
+    private String id;
+    private String type;
+    private int maxKw;
+
     public ChargingConnectorDto(ChargingConnector chargingConnector) {
         this.id = chargingConnector.getId().toString();
         this.type = chargingConnector.getType().name();
         this.maxKw = chargingConnector.getMaxKw();
     }
-
-    private String id;
-    private String type;
-    private int maxKw;
 }

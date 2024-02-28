@@ -1,18 +1,15 @@
 package com.example.solaev.service;
 
 import com.example.solaev.dto.AddressDto;
-import com.example.solaev.exception.NotFoundAddress;
 import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.model.AddressComponent;
 import com.google.maps.model.GeocodingResult;
 import com.google.maps.model.LatLng;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-@Slf4j
 public class GoogleApiService {
     private final GeoApiContext context;
 
@@ -24,10 +21,10 @@ public class GoogleApiService {
         try {
             results = GeocodingApi.reverseGeocode(context, new LatLng(latitude, longitude)).await();
         } catch (Exception e) {
-            throw new NotFoundAddress();
+            return null;
         }
         if (results == null || results.length == 0) {
-            throw new NotFoundAddress();
+            return null;
         }
         AddressDto addressDto = new AddressDto();
         AddressComponent[] addressComponents = results[0].addressComponents;

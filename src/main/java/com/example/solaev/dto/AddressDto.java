@@ -11,6 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressDto {
+    private String id;
+    private String street;
+    private String houseNumber;
+    private String city;
+    private String region;
+    private String country;
+    private String postCode;
+
     public AddressDto(Address address) {
         this.id = address.getId().toString();
         this.street = address.getStreet();
@@ -20,12 +28,4 @@ public class AddressDto {
         this.country = address.getCountry();
         this.postCode = address.getPostCode();
     }
-
-    private String id;
-    private String street;
-    private String houseNumber;
-    private String city;
-    private String region;
-    private String country;
-    private String postCode;
 }

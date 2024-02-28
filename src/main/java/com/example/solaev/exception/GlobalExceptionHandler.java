@@ -17,10 +17,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
         return ResponseEntity.badRequest().body("Illegal argument: " + ex.getMessage());
     }
-    @ExceptionHandler(NotFoundAddress.class)
-    public ResponseEntity<String> handleIllegalArgumentException(NotFoundAddress ex) {
-        return ResponseEntity.badRequest().body("Not found address" + ex.getMessage());
-    }
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException ex) {
         List<String> messages = ex.getConstraintViolations().stream()

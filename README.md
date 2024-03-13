@@ -9,7 +9,7 @@
   
 **DATASOURCE_USER=user;**
 
-**GOOGLE_API_KEY=AIzaSyCN1iqS_3TcZ2d2d5SZwUnTOqDiRmwG13c**
+**GOOGLE_API_KEY=apiKay**
 
 - Launch the app
 - Open link http://localhost:8080/swagger-ui/index.html#/charging-station-controller/saveChargingStation
